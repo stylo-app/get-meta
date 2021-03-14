@@ -1,0 +1,10 @@
+{
+  "name": "get-meta",
+  "version": "1.0.0",
+  "description": "script to get new metadata",
+  "main": "src/index.ts",
+  "repository": "https://github.com/stylo-app/get-meta",
+  "author": "Thibaut Sardan <hi@thib.top>",
+  "license": "MIT",
+  "private": false
+}
