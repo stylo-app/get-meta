@@ -22,9 +22,9 @@ export default class NodeConnection {
       // commented out as to not spam, but useful for debugging
       // to make sure we connect only once.
 
-      // api.on('connected', () => {
-      //   console.info('--> api connected', this.wsEndpoint);
-      // });
+      api.on('connected', () => {
+        console.info('--> api connected', this.wsEndpoint);
+      });
 
       // api.on('disconnected', () => {
       //   console.info('<-- api disconnected');
