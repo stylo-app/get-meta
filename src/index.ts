@@ -22,9 +22,9 @@ export default class NodeConnection {
       // commented out as to not spam, but useful for debugging
       // to make sure we connect only once.
 
-      api.on('connected', () => {
-        console.info('--> api connected', this.wsEndpoint);
-      });
+      // api.on('connected', () => {
+      //   console.info('--> api connected', this.wsEndpoint);
+      // });
 
       // api.on('disconnected', () => {
       //   console.info('<-- api disconnected');
@@ -45,45 +45,46 @@ export default class NodeConnection {
 }
 
 interface NodeInfo {
-  name: string
-  metadata: string;
-  nodeVersion: number;
+  hex: string;
+  name: string;
+  specVersion: number;
 }
 
 interface NodeResult extends NodeInfo {
   genesis: string;
 }
 
-type Result = Record<string, NodeInfo>
+type Result = Record<string, Partial<NodeInfo>>
 
-const allCalls = config.map(async ({ rpcEndpoint, name }) => {
+const allCalls = config.map(async ({ rpcEndpoint, name, genesis }) => {
   const connection = new NodeConnection(rpcEndpoint);
   const api = await connection.getConnectedApiInstance();
   if (!api) { return; }
 
-  const nodeVersion = api.runtimeVersion.specVersion.toNumber();
+  const specVersion = api.runtimeVersion.specVersion.toNumber();
   const nodeMeta = api.runtimeMetadata.asCallsOnly.toHex();
-  const genesis = api.genesisHash.toString();
+  const nodeGenesis = api.genesisHash.toString();
+
+  if (nodeGenesis !== genesis) throw new Error(`Oops, genesis mismatch with ${name}`);
 
   return {
     genesis,
-    metadata: nodeMeta,
+    hex: nodeMeta,
     name,
-    nodeVersion
+    specVersion
   } as NodeResult;
 });
 
 Promise.all(allCalls)
   .then((res) => {
     const data = res.reduce((acc: Result, info: NodeResult| undefined) => {
-      const { genesis, metadata, name, nodeVersion } = info || {};
-      const resultat = genesis && metadata && name && nodeVersion
+      const { hex, name, specVersion } = info || {};
+      const resultat = hex && name && specVersion
         ? {
             ...acc,
-            [genesis]: {
-              metadata,
-              name,
-              nodeVersion
+            [`${name}Metadata`]: {
+              hex,
+              specVersion
             }
           }
         : acc;
