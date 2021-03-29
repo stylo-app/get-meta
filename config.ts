@@ -20,11 +20,11 @@ export default [
     name: 'centrifuge',
     rpcEndpoint: 'wss://fullnode.centrifuge.io'
   },
-  // {
-  //   genesis: '0x742a2ca70c2fda6cee4f8df98d64c4c670a052d9568058982dad9d5a7a135c5b',
-  //   name: 'edgeware',
-  //   rpcEndpoint: 'ws://mainnet4.edgewa.re:9944'
-  // },
+  {
+    genesis: '0x742a2ca70c2fda6cee4f8df98d64c4c670a052d9568058982dad9d5a7a135c5b',
+    name: 'edgeware',
+    rpcEndpoint: 'ws://mainnet4.edgewa.re:9944'
+  },
   {
     genesis: '0x47381ee0697153d64404fc578392c8fd5cba9073391908f46c888498415647bd',
     name: 'rococo',
