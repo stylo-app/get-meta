@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@types/node": "^14.14.41",
+    "@types/ws": "^7.4.1",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "eslint": "^7.24.0",
@@ -30,8 +31,7 @@
     "typescript": "^4.2.4"
   },
   "dependencies": {
-    "@polkadot/api": "^4.5.1",
-    "@polkadot/apps-config": "^0.87.1",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "ws": "^7.4.5"
   }
 }
