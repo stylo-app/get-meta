@@ -15,21 +15,21 @@ export default [
     name: 'polkadot',
     rpcEndpoint: 'wss://rpc.polkadot.io'
   },
-  {
-    genesis: '0x67dddf2673b69e5f875f6f25277495834398eafd67f492e09f3f3345e003d1b5',
-    name: 'centrifuge',
-    rpcEndpoint: 'wss://fullnode.centrifuge.io'
-  },
-  {
-    genesis: '0x742a2ca70c2fda6cee4f8df98d64c4c670a052d9568058982dad9d5a7a135c5b',
-    name: 'edgeware',
-    rpcEndpoint: 'ws://mainnet4.edgewa.re:9944'
-  },
-  {
-    genesis: '0x47381ee0697153d64404fc578392c8fd5cba9073391908f46c888498415647bd',
-    name: 'rococo',
-    rpcEndpoint: 'wss://rococo-rpc.polkadot.io'
-  },
+  // {
+  //   genesis: '0x67dddf2673b69e5f875f6f25277495834398eafd67f492e09f3f3345e003d1b5',
+  //   name: 'centrifuge',
+  //   rpcEndpoint: 'wss://fullnode.centrifuge.io'
+  // },
+  // {
+  //   genesis: '0x742a2ca70c2fda6cee4f8df98d64c4c670a052d9568058982dad9d5a7a135c5b',
+  //   name: 'edgeware',
+  //   rpcEndpoint: 'ws://mainnet4.edgewa.re:9944'
+  // },
+  // {
+  //   genesis: '0x47381ee0697153d64404fc578392c8fd5cba9073391908f46c888498415647bd',
+  //   name: 'rococo',
+  //   rpcEndpoint: 'wss://rococo-rpc.polkadot.io'
+  // },
   {
     genesis: '0xe143f23803ac50e8f6f8e62695d1ce9e4e1d68aa36c1cd2cfd15340213f3423e',
     name: 'westend',
