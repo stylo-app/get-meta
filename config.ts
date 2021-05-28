@@ -26,7 +26,7 @@ export default [
     rpcEndpoint: 'ws://mainnet1.edgewa.re:9944'
   },
   {
-    genesis: '0x1611e1dbf0405379b861e2e27daa90f480b2e6d3682414a80835a52e8cb8a215',
+    genesis: '0xe7c3d5edde7db964317cd9b51a3a059d7cd99f81bdbce14990047354334c9779',
     name: 'rococo',
     rpcEndpoint: 'wss://rococo-rpc.polkadot.io'
   },
