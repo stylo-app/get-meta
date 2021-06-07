@@ -31,9 +31,9 @@ export default [
     rpcEndpoint: 'wss://rococo-rpc.polkadot.io'
   },
   {
-    genesis: '0xe143f23803ac50e8f6f8e62695d1ce9e4e1d68aa36c1cd2cfd15340213f3423e',
-    name: 'westend',
-    rpcEndpoint: 'wss://westend-rpc.polkadot.io'
+    genesis: '0x48239ef607d7928874027a43a67689209727dfb3d3dc5e5b03a39bdc2eda771a',
+    name: 'statemine',
+    rpcEndpoint: 'wss://kusama-statemine-rpc.paritytech.net'
   },
   {
     genesis: '0xf7a99d3cb92853d00d5275c971c132c074636256583fee53b3bbe60d7b8769ba',
